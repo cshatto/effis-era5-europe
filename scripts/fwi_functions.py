@@ -94,7 +94,7 @@ def calc_dmc(T, RH, rain, dmc_yesterday):
     # Effective rainfall for DMC (in mm); threshold of 1.5 mm.
     rf = xr.where(rain > 1.5, rain, 0.0)
     # Rain effect: update DMC due to rain (Re)
-    Re = 0.92 * rf - 1.27 if rf > 1.5 else 0.0  # Note: vectorize below
+    # Re = 0.92 * rf - 1.27 if rf > 1.5 else 0.0  # Note: vectorizse below
     Re = xr.where(rain > 1.5, 0.92 * rain - 1.27, 0.0)
     
     # Calculate adjustment term for DMC (based on temperature and RH)
