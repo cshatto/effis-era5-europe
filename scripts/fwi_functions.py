@@ -102,7 +102,7 @@ def calc_dmc(T, RH, rain, dmc_yesterday):
     # K = 1.894 * (T + 1.1) * (100 - RH) * 0.0001
     K = 1.894 * (T + 1.1) * (100 - RH) * 1e-4
     # DMC increases by rain-adjusted term plus the drying term K.
-    dmc = xr.maximum(dmc_yesterday + Re + K, 0)
+    dmc = np.maximum(dmc_yesterday + Re + K, 0)
     return dmc
 
 def calc_dc(T, rain, dc_yesterday):
