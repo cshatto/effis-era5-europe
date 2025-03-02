@@ -10,8 +10,8 @@ Note: This implementation assumes that:
 The system is recursive, so previous day values for FFMC, DMC, and DC must be supplied.
 """
 
-import numpy as np
-import xarray as xr
+import numpy as np 
+import xarray as xr 
 
 def calc_ffmc(T, RH, wind, rain, ffmc_yesterday):
     """
